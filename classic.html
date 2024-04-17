@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Classic Series</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" href="index.html"><img src="Warner Brother logo.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="Company Logo">
+                Warner Brothers</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="movies.html">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="television.html">Television Series</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="games.html">Apps and Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Collections</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="feedback.html">Feedback</a>
+                        </li>
+                </div>
+            </div>
+            <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="bg-dark col-auto col-md-2 min-vh-100">
+                <div class="bg-dark p-2">
+                    <a class="d-flex text-decoration-none mt-1 align-items-centre text-white">
+                        <span class="fs-4 d-none d-sm-inline">Genres</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mt-4" id="genreList">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="filterMovies('action')">
+                                <i class="fs-5 fa fa-guage"></i><span class="fs-4 d-none d-sm-inline">Action</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="filterMovies('adventure')">
+                                <i class="fs-5 fa fa-guage"></i><span class="fs-4 d-none d-sm-inline">Adventure</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="filterMovies('drama')">
+                                <i class="fs-5 fa fa-guage"></i><span class="fs-4 d-none d-sm-inline">Drama</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="filterMovies('comedy')">
+                                <i class="fs-5 fa fa-guage"></i><span class="fs-4 d-none d-sm-inline">Comedy</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="filterMovies('mystery')">
+                                <i class="fs-5 fa fa-guage"></i><span class="fs-4 d-none d-sm-inline">Mystery</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <h1>.</h1>
+                        <h1>.</h1>
+                        <h2>Classic Movie Catalogue</h2>
+                        <div id="movieList" class="row">
+                            <!-- Movie cards with images will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script>
+                // Sample movie data (replace with actual data from your source)
+                const movies = [
+                    { title: 'Casablanca', genre: 'action', image: 'casablanca.jpg', link: 'casablanca.html' },
+                    { title: 'Manpower', genre: 'comedy', image: 'manpower.jpg' },
+                    { title: 'The Outsiders', genre: 'drama', image: 'theoutsiders.jpg' },
+                    { title: 'One Sheet', genre: 'action', image: 'onesheet.jpg' },
+                    { title: 'The Sea Hawk', genre: 'comedy', image: 'theseahawk.jpg' },
+                    { title: 'Crime School', genre: 'drama', image: 'crimeschool.jpg' }
+                    // Add more movie objects as needed
+                ];
+
+                // JavaScript code for populating movieList with movie cards
+                function renderMovieCards(movies) {
+                    const movieList = document.getElementById('movieList');
+                    movieList.innerHTML = '';
+                    movies.forEach(movie => {
+                        const card = `
+                      <div class="row-col-md-4 mb-4">
+                        <a href ="${movie.link}">
+                        <div class="card" style="width: 18rem;">
+                          <img src="${movie.image}" class="card-img-top" alt="${movie.title}">
+                          <div class="card-body">
+                            <h5 class="card-title">${movie.title}</h5>
+                            <p class="card-text">Genre: ${movie.genre}</p>
+                          </div>
+                        </div>
+                        </a>
+                      </div>
+                    `;
+                        movieList.innerHTML += card;
+                    });
+                }
+
+                // JavaScript code for filtering movies
+                function filterMovies(genre) {
+                    const filteredMovies = movies.filter(movie => movie.genre === genre);
+                    renderMovieCards(filteredMovies);
+                }
+
+                // Initial rendering of all movies
+                renderMovieCards(movies);
+            </script>
+        </div>
+    </div>
+    <footer class="bg-warning text-center p-3">
+        <p>Warner Brothers © 2024 Follow us on: <a href = 'https://twitter.com/wbpictures'><img src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Twitter-icon.png" alt="Twitter" style="width: 40px; height: 40px;">Twitter</a></p>
+        <p>Email us on: warnerbrothers@gmail.com</p>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

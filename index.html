@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Warner Bros.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .card {
+        width: 75%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .movie-card-heading {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(0, 81, 255, 0.619)
+    }
+
+    #background-picture {
+      background-size: 1280px, 720px;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" href="index.html"><img src="Warner Brother logo.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="Company Logo">
+                Warner Brothers</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="movies.html">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="television.html">Television Series</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="games.html">Apps and Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="collections.html">Collections</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="feedback.html">Feedback</a>
+                        </li>
+                </div>
+            </div>
+            <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <a href="dune.html"><img src="dune.jpg" class="w-100"></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Dune: Part 2</h1>
+                    <p>In theatres now.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="thebatman.jpg" class="w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>The Batman</h1>
+                    <p>Now streaming.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="kingkong.jpg" class="w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>King Kong vs Godzilla</h1>
+                    <p>An unstoppable force meets an immovable object.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="birdsofprey.jpg" class="w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Birds of Prey</h1>
+                    <p>Relive a classic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev"><span
+            class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next"><span
+            class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+    <div class="carousel-indicators">
+        <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0" aria-current="true"
+            aria-label="Slide 0"></button>
+        <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="1"
+            aria-label="Slide 1"></button>
+        <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="2"
+            aria-label="Slide 2"></button>
+        <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="3"
+            aria-label="Slide 3"></button>
+    </div>
+
+    <section class="coming" id="coming">
+        <div class="background">
+            <div id="background-picture">
+                <img src="dunebackground.jpg">
+            </div>
+            <div class="movie-card-heading">
+                <h2 style="font-size: 4em; color: #fff;">Movies</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="movies.html"><img src="batmanposter.jpg" class="card-img-top" alt="Picture 1"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Movies</h5>
+                            <p class="card-text">Step into the world of Warner Bros., where cinematic magic comes to
+                                life. As a powerhouse in the entertainment industry, Warner Bros. has been captivating
+                                audiences for decades with its diverse range of movies. From iconic franchises like
+                                Harry Potter and DC Comics superheroes to compelling dramas and hilarious comedies,
+                                Warner Bros. delivers an unparalleled cinematic experience.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="adamposter.jpg" class="card-img-top" alt="Picture 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Black Adam</h5>
+                            <p class="card-text">“Black Adam” is a 2022 superhero film featuring the DC character of the
+                                same name. The story follows Black Adam, who, after being endowed with the powers of the
+                                Egyptian gods and quickly imprisoned, is freed from his earthly tomb nearly 5,000 years
+                                later. He is ready to unleash his unique form of justice on the modern world, which
+                                brings him into conflict with modern-day heroes from the Justice Society</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="beetleposter.jpg" class="card-img-top" alt="Picture 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Blue Beetle</h5>
+                            <p class="card-text">Blue Beetle is a superhero movie that follows Jaime Reyes, the third
+                                iteration of the Blue Beetle, as he gains superpowers when a blue alien Scarab attaches
+                                to him after returning home from college. The Scarab bestows Jaime with a suit of armor
+                                that's capable of extraordinary powers, forever changing his destiny as he becomes the
+                                superhero known as Blue Beetle. The movie is an action-adventure sci-fi film that
+                                explores Jaime's journey to become a hero while unearthing the mysteries of the past
+                                Blue Beetles.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="next" id="next">
+        <div class="background">
+            <div id="background-picture">
+                <img src="dunebackground.jpg">
+            </div>
+            <div class="movie-card-heading">
+                <h2 style="font-size: 4em; color: #fff;">Televison Series</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="television.html"><img src="sheldon.jpg" class="card-img-top" alt="Picture 1"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Series</h5>
+                            <p class="card-text">Warner Bros. has an extensive array of series that span various genres, captivating audiences with compelling storytelling, memorable characters, and innovative production. From timeless animated classics like "Looney Tunes" and "Scooby-Doo" to captivating live-action series such as "Friends" and "The Big Bang Theory," Warner Bros. has left an indelible mark on the world of television.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="harleyquinn.jpg" class="card-img-top" alt="Picture 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Harley Quinn</h5>
+                            <p class="card-text">The series follows the adventures of Harley Quinn and her journey of self-discovery after breaking up with the Joker upon realizing that he never loved her. Harley intends to make a name for herself in Gotham City's criminal underworld, starting with the formation of her own crew, which consists of her best friend Poison Ivy, Clayface, Doctor Psycho, King Shark, and Sy Borgman.[1] During her attempts to prove herself as a competent villain, Harley faces her troubled past, gains self-confidence that helps her abolish the Joker's influence on her, and finds an autonomous identity.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="adventure.jpg" class="card-img-top" alt="Picture 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Adventure Time</h5>
+                            <p class="card-text">Adventure Time is an American animated television series that offers a unique and captivating storyline, blending elements of fantasy, adventure, and post-apocalyptic themes. The show follows the story of Finn Mertens, a young heroic boy, and his best friend and adoptive older brother Jake, a talking yellow dog with magical powers. Together, they embark on a series of surreal adventures in the post-apocalyptic Land of Ooo, which was ravaged by a cataclysmic event known as the "Mushroom War," a nuclear war that destroyed civilization a thousand years before the series' events 
+                                .</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="next" id="next">
+        <div class="background">
+            <div id="background-picture">
+                <img src="dunebackground.jpg">
+            </div>
+            <div class="movie-card-heading">
+                <h2 style="font-size: 4em; color: #fff;">Apps and Games</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="games.html"><img src="mortalkombat.jpg" class="card-img-top" alt="Picture 1"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Apps and Games</h5>
+                            <p class="card-text">Warner Bros. has been involved in the creation of various video game titles, spanning different genres and platforms. The studio has contributed to the gaming industry with a diverse range of games, from captivating storytelling to immersive gameplay experiences.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="hitman.jpg" class="card-img-top" alt="Picture 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Hitman 2</h5>
+                            <p class="card-text">From sun-drenched streets to dark and dangerous rainforests, nowhere is safe from the world's most creative assassin, Agent 47. The ultimate spy thriller story unfolds as players' mission is to eliminate the elusive Shadow Client and unravel his militia. However, when 47 learns his target's true identity and the truth about his past, it changes everything 
+                                .</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="legovillains.jpg" class="card-img-top" alt="Picture 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Lego: DC Villains</h5>
+                            <p class="card-text">In "Lego DC Super-Villains," players are invited to embark on a mischievous adventure through the LEGO universe as they join forces with renowned DC super-villains. The game's narrative unfolds in an alternate universe where the Justice League has vanished, leaving Earth vulnerable to a new group of heroes from a parallel universe, the "Justice Syndicate." However, as chaos ensues, it becomes apparent that these new heroes may not be as heroic as they initially seemed.
+
+
+
+
+
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-warning text-center p-3">
+        <p>Warner Brothers © 2024 Follow us on: <a href='https://twitter.com/wbpictures'><img
+                    src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Twitter-icon.png" alt="Twitter"
+                    style="width: 40px; height: 40px;">Twitter</a></p>
+        <p>Email us on: warnerbrothers@gmail.com</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
